@@ -1,0 +1,129 @@
+.fade {
+  &-enter {
+    opacity: 0;
+  }
+  &-enter-to {
+    opacity: 1;
+  }
+  &-leave {
+    opacity: 1;
+  }
+  &-leave-to {
+    opacity: 0;
+  }
+  &-leave-active,
+  &-enter-active {
+    transition: opacity 0.3s ease;
+  }
+}
+
+
+.fade-move-left {
+  &-enter {
+    opacity: 0;
+    transform: translateX(50px) rotate3d(0, 1, 0, 45deg);
+  }
+  &-enter-to {
+    opacity: 1;
+    transform: translateX(0) rotate3d(0, 0, 0, 0);
+  }
+  &-leave {
+    opacity: 1;
+    transform: translateX(0) rotate3d(0, 0, 0, 0);
+  }
+  &-leave-to {
+    opacity: 0;
+    transform: translateX(-50px) rotate3d(0, 1, 0, -45deg);
+  }
+  &-leave-active,
+  &-enter-active {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+}
+
+
+.fade-move-right {
+  &-enter {
+    opacity: 0;
+    transform: translateX(-50px) rotate3d(0, 1, 0, -45deg);
+  }
+  &-enter-to {
+    opacity: 1;
+    transform: translateX(0) rotate3d(0, 0, 0, 0);
+  }
+  &-leave {
+    opacity: 1;
+    transform: translateX(0) rotate3d(0, 0, 0, 0);
+  }
+  &-leave-to {
+    opacity: 0;
+    transform: translateX(50px) rotate3d(0, 1, 0, 45deg);
+  }
+  &-leave-active,
+  &-enter-active {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+}
+
+
+.modal-fade-scale {
+  &-enter {
+    opacity: 0;
+    .close {
+      transform: translateY(-20px);
+    }
+    .wrapper {
+      transform: translateY(20px);
+    }
+  }
+  &-enter-to {
+    opacity: 1;
+    .close {
+      transform: translateY(0);
+    }
+    .wrapper {
+      transform: translateY(0);
+    }
+  }
+  &-leave {
+    opacity: 1;
+    .close {
+      transform: translateY(0);
+    }
+    .wrapper {
+      transform: translateY(0);
+    }
+  }
+  &-leave-to {
+    opacity: 0;
+    .close {
+      transform: translateY(-20px);
+    }
+    .wrapper {
+      transform: translateY(20px);
+    }
+  }
+  &-enter-active {
+    will-change: opacity;
+    transition: opacity 0.3s ease-out;
+
+    .close {
+      transition: transform 0.3s ease-out;
+    }
+    .wrapper {
+      transition: transform 0.3s ease-out;
+    }
+  }
+
+  &-leave-active {
+    will-change: opacity;
+    transition: opacity 0.3s ease-in;
+
+    .close {
+      transition: transform 0.3s ease-in;
+    }
+    .wrapper {
+      transition: transform 0.3s ease-in;
+    }
+  }
+}
